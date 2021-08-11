@@ -1,0 +1,29 @@
+lsd:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+
+  fl_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: CH_FCL_l
+    pid: {p: 1100, i: 200, d: 100}
+
+  fr_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: CH_FCL_r
+    pid: {p: 1100, i: 200, d: 100}
+
+  bl_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: CH_RCL_l
+    pid: {p: 1100, i: 200, d: 100}
+
+  br_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: CH_RCL_r
+    pid: {p: 1100, i: 200, d: 100}
+
+

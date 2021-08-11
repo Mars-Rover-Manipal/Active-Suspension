@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  
+
+  <arg name="world_name" default="empty.world"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find lsd)/worlds/$(arg world_name)"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+  </include>
+
+
+  <param name="robot_description" textfile="$(find lsd)/urdf/lsd.urdf" />
+
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find lsd)/models/lsd/model.sdf -sdf -z 0.5 -model lsd" output="screen" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find lsd)/config/control.yaml" command="load"/> 
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" ns="/lsd" args="fl_joint_position_controller fr_joint_position_controller 
+      bl_joint_position_controller br_joint_position_controller joint_state_controller"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+  <node name="reset_pose_node" pkg="lsd" type="reset_pose.py"/>
+
+</launch>

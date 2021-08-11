@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+	    <pose>0 0 0 0 0 0</pose>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://mars</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!--Obstacles-->
+    <include>
+      <uri>model://step</uri>
+      <name>step1</name>
+      <pose>-5 0 0.16 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://step</uri>
+      <name>step2</name>
+      <pose>11 0 0.16 0 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://step</uri>
+      <name>step3</name>
+      <pose>20 0 0.16 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://step</uri>
+      <name>step4</name>
+      <pose>28 0 0.16 0 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://step</uri>
+      <name>step5</name>
+      <pose>40 0 0.16 0 0 0</pose>
+    </include>
+
+<scene>
+  <sky>
+    <clouds>
+      <speed>50</speed>
+    </clouds>
+  </sky>
+    <ambient>0 0 0 1.0</ambient>
+    <shadows>0</shadows>
+</scene>
+
+  </world>
+</sdf>

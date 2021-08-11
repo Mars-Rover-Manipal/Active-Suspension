@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="lsd">
+
+  <gazebo>
+    <static>false</static>
+  </gazebo>
+
+  
+  <link name="dummy"/>
+
+  <link
+    name="CH">
+    <inertial>
+      <origin
+        xyz="-1.2577E-06 -4.0479E-21 -6.6109E-05"
+        rpy="0 0 0" />
+      <mass
+        value="19.973" />
+      <inertia
+        ixx="0.49814"
+        ixy="1.0467E-16"
+        ixz="1.1843E-05"
+        iyy="0.94745"
+        iyz="1.5792E-17"
+        izz="1.3494" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/CH.STL" />
+      </geometry>
+      <material
+        name="blue">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/CH.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <gazebo reference="CH">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <joint name="dummy_joint" type="fixed">
+   <parent link="dummy"/>
+   <child link="CH"/>
+ </joint>
+
+
+  <link
+    name="FCL_r">
+    <inertial>
+      <origin
+        xyz="-8.2323E-14 -0.075 0.015"
+        rpy="0 0 0" />
+      <mass
+        value="0.4" />
+      <inertia
+        ixx="0.00095237"
+        ixy="-9.7968E-16"
+        ixz="-6.58E-22"
+        iyy="6.0874E-05"
+        iyz="9.7024E-21"
+        izz="0.00095324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FCL_r.STL" />
+      </geometry>
+      <material
+        name="yellow">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FCL_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="FCL_r">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <joint
+    name="CH_FCL_r"
+    type="continuous">
+    <origin
+      xyz="0.3083 -0.26 0.053926"
+      rpy="1.5708 0.45693 0" />
+    <parent
+      link="CH" />
+    <child
+      link="FCL_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  
+  <link
+    name="FB_r">
+    <inertial>
+      <origin
+        xyz="0.0867 -0.045993 0.023367"
+        rpy="0 0 0" />
+      <mass
+        value="2" />
+      <inertia
+        ixx="0.007584"
+        ixy="0.0051798"
+        ixz="-0.001033"
+        iyy="0.081024"
+        iyz="-0.00021378"
+        izz="0.087785" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FB_r.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FB_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="FB_r">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <joint
+    name="FCL_FB_r"
+    type="continuous">
+    <origin
+      xyz="0 -0.15 0.03"
+      rpy="0 0 0.45967" />
+    <parent
+      link="FCL_r" />
+    <child
+      link="FB_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="FW_r">
+    <inertial>
+      <origin
+        xyz="-5.4734E-14 2.8433E-13 0.065"
+        rpy="0 0 0" />
+      <mass
+        value="2.7" />
+      <inertia
+        ixx="0.019007"
+        ixy="1.1613E-34"
+        ixz="0"
+        iyy="0.019007"
+        iyz="-5.0985E-35"
+        izz="0.030409" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FW_r.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FW_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="FW_r">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <joint
+    name="FB_FW_r"
+    type="continuous">
+    <origin
+      xyz="0.39003 -0.17975 0.05"
+      rpy="0 0 -0.0027411" />
+    <parent
+      link="FB_r" />
+    <child
+      link="FW_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="RCL_r">
+    <inertial>
+      <origin
+        xyz="2.7756E-16 -0.075 0.015"
+        rpy="0 0 0" />
+      <mass
+        value="0.4" />
+      <inertia
+        ixx="0.00095237"
+        ixy="-1.362E-18"
+        ixz="1.9228E-21"
+        iyy="6.0874E-05"
+        iyz="5.0745E-20"
+        izz="0.00095324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RCL_r.STL" />
+      </geometry>
+      <material
+        name="yellow">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RCL_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="RCL_r">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <joint
+    name="CH_RCL_r"
+    type="continuous">
+    <origin
+      xyz="-0.3063 -0.26 0.0512"
+      rpy="1.5708 0.55096 0" />
+    <parent
+      link="CH" />
+    <child
+      link="RCL_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="RB_r">
+    <inertial>
+      <origin
+        xyz="-0.036527 -0.045993 0.026633"
+        rpy="0 0 0" />
+      <mass
+        value="2" />
+      <inertia
+        ixx="0.007584"
+        ixy="-0.0051958"
+        ixz="-0.0010325"
+        iyy="0.081066"
+        iyz="0.00021378"
+        izz="0.087828" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RB_r.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RB_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="RB_r">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <joint
+    name="RCL_RB_r"
+    type="continuous">
+    <origin
+      xyz="0 -0.15 0.03"
+      rpy="0 0 0.53656" />
+    <parent
+      link="RCL_r" />
+    <child
+      link="RB_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="MW_r">
+    <inertial>
+      <origin
+        xyz="-4.9342E-14 -7.9659E-14 0.065"
+        rpy="0 0 0" />
+      <mass
+        value="2.7" />
+      <inertia
+        ixx="0.019007"
+        ixy="-2.7105E-20"
+        ixz="-4.3188E-21"
+        iyy="0.019007"
+        iyz="-1.4349E-24"
+        izz="0.030409" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/MW_r.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/MW_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="MW_r">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+
+  <joint
+    name="RB_MW_r"
+    type="continuous">
+    <origin
+      xyz="0.34003 -0.17975 0.05"
+      rpy="0 0 0.019923" />
+    <parent
+      link="RB_r" />
+    <child
+      link="MW_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="RW_r">
+    <inertial>
+      <origin
+        xyz="-4.1855E-14 8.7375E-14 0.065"
+        rpy="0 0 0" />
+      <mass
+        value="2.7" />
+      <inertia
+        ixx="0.019007"
+        ixy="1.1613E-34"
+        ixz="0"
+        iyy="0.019007"
+        iyz="-5.0985E-35"
+        izz="0.030409" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RW_r.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RW_r.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="RW_r">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <joint
+    name="RB_RW_r"
+    type="continuous">
+    <origin
+      xyz="-0.34003 -0.17975 0.05"
+      rpy="0 0 0.014396" />
+    <parent
+      link="RB_r" />
+    <child
+      link="RW_r" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="FCL_l">
+    <inertial>
+      <origin
+        xyz="-7.7716E-16 -0.075 -0.015"
+        rpy="0 0 0" />
+      <mass
+        value="0.4" />
+      <inertia
+        ixx="0.00095237"
+        ixy="2.1633E-18"
+        ixz="1.1537E-20"
+        iyy="6.0874E-05"
+        iyz="-3.6651E-21"
+        izz="0.00095324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FCL_l.STL" />
+      </geometry>
+      <material
+        name="yellow">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FCL_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="FCL_l">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <joint
+    name="CH_FCL_l"
+    type="continuous">
+    <origin
+      xyz="0.3083 0.26 0.053926"
+      rpy="1.5708 0.33389 0" />
+    <parent
+      link="CH" />
+    <child
+      link="FCL_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="FB_l">
+    <inertial>
+      <origin
+        xyz="0.0867 -0.045993 -0.023367"
+        rpy="0 0 0" />
+      <mass
+        value="2" />
+      <inertia
+        ixx="0.007584"
+        ixy="0.0051798"
+        ixz="0.001033"
+        iyy="0.081024"
+        iyz="0.00021378"
+        izz="0.087785" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FB_l.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FB_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="FB_l">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+
+  <joint
+    name="FCL_FB_l"
+    type="continuous">
+    <origin
+      xyz="0 -0.15 -0.03"
+      rpy="0 0 0.34547" />
+    <parent
+      link="FCL_l" />
+    <child
+      link="FB_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="FW_l">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 5.5511E-17 -0.065"
+        rpy="0 0 0" />
+      <mass
+        value="2.7" />
+      <inertia
+        ixx="0.019007"
+        ixy="1.1613E-34"
+        ixz="0"
+        iyy="0.019007"
+        iyz="-5.0985E-35"
+        izz="0.030409" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FW_l.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/FW_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="FW_l">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <joint
+    name="FB_FW_l"
+    type="continuous">
+    <origin
+      xyz="0.39003 -0.17975 -0.05"
+      rpy="0 0 -0.011582" />
+    <parent
+      link="FB_l" />
+    <child
+      link="FW_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="RCL_l">
+    <inertial>
+      <origin
+        xyz="4.4409E-16 -0.075 -0.015"
+        rpy="0 0 0" />
+      <mass
+        value="0.4" />
+      <inertia
+        ixx="0.00095237"
+        ixy="1.7652E-18"
+        ixz="-8.7287E-21"
+        iyy="6.0874E-05"
+        iyz="6.7752E-21"
+        izz="0.00095324" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RCL_l.STL" />
+      </geometry>
+      <material
+        name="yellow">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RCL_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="RCL_l">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <joint
+    name="CH_RCL_l"
+    type="continuous">
+    <origin
+      xyz="-0.3063 0.26 0.0512"
+      rpy="1.5708 0.41096 0" />
+    <parent
+      link="CH" />
+    <child
+      link="RCL_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="RB_l">
+    <inertial>
+      <origin
+        xyz="-0.036527 -0.045993 -0.026633"
+        rpy="0 0 0" />
+      <mass
+        value="2" />
+      <inertia
+        ixx="0.007584"
+        ixy="-0.0051958"
+        ixz="0.0010325"
+        iyy="0.081066"
+        iyz="-0.00021378"
+        izz="0.087828" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RB_l.STL" />
+      </geometry>
+      <material
+        name="red">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RB_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="RB_l">
+    <material>Gazebo/Red</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <joint
+    name="RCL_RB_l"
+    type="continuous">
+    <origin
+      xyz="0 -0.15 -0.03"
+      rpy="0 0 0.39671" />
+    <parent
+      link="RCL_l" />
+    <child
+      link="RB_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="MW_l">
+    <inertial>
+      <origin
+        xyz="-3.4694E-18 5.5511E-17 -0.065"
+        rpy="0 0 0" />
+      <mass
+        value="2.7" />
+      <inertia
+        ixx="0.019007"
+        ixy="1.1613E-34"
+        ixz="0"
+        iyy="0.019007"
+        iyz="-5.0985E-35"
+        izz="0.030409" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/MW_l.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+          filename="package://lsd/models/lsd/meshes/RB_r.STL" />
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/MW_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="MW_l">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <joint
+    name="RB_MW_l"
+    type="continuous">
+    <origin
+      xyz="0.34003 -0.17975 -0.05"
+      rpy="0 0 0.014249" />
+    <parent
+      link="RB_l" />
+    <child
+      link="MW_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="RW_l">
+    <inertial>
+      <origin
+        xyz="0 0 -0.065"
+        rpy="0 0 0" />
+      <mass
+        value="2.7" />
+      <inertia
+        ixx="0.019007"
+        ixy="1.1613E-34"
+        ixz="0"
+        iyy="0.019007"
+        iyz="-5.0985E-35"
+        izz="0.030409" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RW_l.STL" />
+      </geometry>
+      <material
+        name="black">
+        <color
+          rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://lsd/models/lsd/meshes/RW_l.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="RW_l">
+    <material>Gazebo/Black</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+
+  <joint
+    name="RB_RW_l"
+    type="continuous">
+    <origin
+      xyz="-0.34003 -0.17975 -0.05"
+      rpy="0 0 0.014249" />
+    <parent
+      link="RB_l" />
+    <child
+      link="RW_l" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="10" />
+  </joint>
+
+<!-- Attach ROS Controllers -->
+
+<transmission name="front_left_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="CH_FCL_l">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="front_left_motor">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="front_right_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="CH_FCL_r">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="front_right_motor">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="back_left_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="CH_RCL_l">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="back_left_motor">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="back_right_transmission">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="CH_RCL_r">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="back_right_motor">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+
+</robot>

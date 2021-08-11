@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'CH_FCL_r', 'FCL_FB_r', 'FB_FW_r', 'CH_RCL_r', 'RCL_RB_r', 'RB_MW_r', 'RB_RW_r', 'CH_FCL_l', 'FCL_FB_l', 'FB_FW_l', 'CH_RCL_l', 'RCL_RB_l', 'RB_MW_l', 'RB_RW_l', ]

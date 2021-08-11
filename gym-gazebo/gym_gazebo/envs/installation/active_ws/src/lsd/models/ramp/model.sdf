@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+
+
+  <model name="ramp">
+    <static>true</static>
+
+    <pose>0 0 1.05 0 0.4 3.1414</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>5 2.5 .1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>5 2.5 .1</size>
+          </box>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+</sdf>

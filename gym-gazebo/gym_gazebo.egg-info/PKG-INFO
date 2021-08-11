@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: gym-gazebo
+Version: 0.0.2
+Summary: The OpenAI Gym for robotics: A toolkit for developing and comparing your reinforcement learning agents using Gazebo and ROS.
+Home-page: https://github.com/erlerobot/gym
+Author: Erle Robotics
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
