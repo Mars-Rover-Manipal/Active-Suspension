@@ -2,7 +2,7 @@
 <launch>
   
 
-  <arg name="world_name" default="empty.world"/>
+  <arg name="world_name" default="rocky.world"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find lsd)/worlds/$(arg world_name)"/>
@@ -17,7 +17,7 @@
 
   <param name="robot_description" textfile="$(find lsd)/urdf/lsd.urdf" />
 
-  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find lsd)/models/lsd/model.sdf -sdf -z 0.5 -model lsd" output="screen" />
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find lsd)/models/lsd/model.sdf -sdf -z 2.0 -model lsd" output="screen" />
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
 
 
